@@ -1,10 +1,6 @@
 <template>
     <div>
-        <div v-if="stats === null">
-            <div class="spinner"></div>
-        </div>
-
-        <table v-else class="striped">
+        <table class="striped">
             <thead>
                 <tr>
                     <th>Country</th>

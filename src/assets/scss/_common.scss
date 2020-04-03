@@ -1,3 +1,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+::placeholder {
+  color: #999999 !important;
+  opacity: 1 !important; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #999999 !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #999999 !important;
+}
