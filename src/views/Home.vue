@@ -1,7 +1,6 @@
 <template>
     <div covid-page>
         <h5>World COVID-19 statistics</h5>
-
         <CovidTable :stats="stats" />
     </div>
 </template>
