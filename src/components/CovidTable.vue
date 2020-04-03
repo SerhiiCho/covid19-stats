@@ -18,10 +18,10 @@
             <tbody>
                 <tr v-for="stat in stats" :key="stat.country">
                     <td>{{ stat.country }}</td>
-                    <td>{{ stat.cases.total }}</td>
+                    <td>{{ formatNumber(stat.cases.total) }}</td>
                     <td>{{ stat.cases.new }}</td>
-                    <td>{{ stat.deaths.total }}</td>
-                    <td>{{ stat.cases.recovered }}</td>
+                    <td>{{ formatNumber(stat.deaths.total) }}</td>
+                    <td>{{ formatNumber(stat.cases.recovered) }}</td>
                 </tr>
             </tbody>
         </table>
