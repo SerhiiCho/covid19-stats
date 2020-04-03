@@ -25,6 +25,9 @@ export default {
 <style lang="scss" scoped>
 .brand-logo {
     font-size: 1.6em;
-    transform: translateY(7px);
+
+    img {
+        transform: translateY(7px);
+    }
 }
 </style>
