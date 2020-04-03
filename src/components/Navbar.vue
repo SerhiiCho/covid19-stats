@@ -4,9 +4,7 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">COVID19</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
+                    <router-link tag="li" to="/"><a>Home</a></router-link>
                 </ul>
             </div>
         </div>
