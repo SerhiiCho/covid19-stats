@@ -22,7 +22,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+@import '@/assets/scss/_common';
+@import '@/assets/scss/_spinner';
 </style>

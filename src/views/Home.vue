@@ -63,6 +63,7 @@ export default Vue.extend({
 
 <style lang="scss">
     [covid-page] {
-        min-height: 1000px;
+        min-height: 400px;
+        position: relative;
     }
 </style>

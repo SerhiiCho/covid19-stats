@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="stats === null">
-            <h2>nice</h2>
+            <div class="spinner"></div>
         </div>
 
-        <table v-else class="striped highlight">
+        <table v-else class="striped">
             <thead>
                 <tr>
                     <th>Country</th>
@@ -19,9 +19,15 @@
                 <tr v-for="stat in stats" :key="stat.country">
                     <td>{{ stat.country }}</td>
                     <td>{{ formatNumber(stat.cases.total) }}</td>
-                    <td>{{ stat.cases.new }}</td>
-                    <td>{{ formatNumber(stat.deaths.total) }}</td>
-                    <td>{{ formatNumber(stat.cases.recovered) }}</td>
+                    <td>
+                        {{ stat.cases.new }}
+                    </td>
+                    <td class="red-text text-darken-3">
+                        {{ formatNumber(stat.deaths.total) }}
+                    </td>
+                    <td class="green-text text-darken-4">
+                        {{ formatNumber(stat.cases.recovered) }}
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -39,3 +45,25 @@ export default Vue.extend({
     },
 })
 </script>
+
+<style lang="scss" scoped>
+    table {
+        td, th {
+            padding: 8px 10px;
+        }
+
+        thead {
+            tr {
+                background-color: #5c6bc030;
+            }
+
+            th {
+                font-size: 17px;
+            }
+        }
+
+        tbody td {
+            font-weight: bold;
+        }
+    }
+</style>
