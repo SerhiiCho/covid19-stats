@@ -1,6 +1,12 @@
 <template>
     <div id="app">
         <Navbar />
+
+        <div class="container section">
+            <vue-page-transition name="fade-in-left">
+                <router-view></router-view>
+            </vue-page-transition>
+        </div>
     </div>
 </template>
 
