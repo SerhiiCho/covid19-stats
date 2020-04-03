@@ -6,11 +6,11 @@
                     C<img src="@/assets/covid.png" alt="covid logo" height="30" />VID-19
                 </router-link>
 
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <router-link tag="li" to="/">
                         <a>Home</a>
                     </router-link>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
