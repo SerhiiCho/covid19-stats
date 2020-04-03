@@ -1,5 +1,5 @@
 <template>
-    <nav class="red darken-3">
+    <nav class="red lighten-1">
         <div class="container">
             <div class="nav-wrapper">
                 <router-link class="brand-logo" to="/">
