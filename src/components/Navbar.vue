@@ -3,7 +3,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <router-link class="brand-logo" to="/">
-                    C<img src="@/assets/covid.png" alt="covid logo" height="17" />VID-19
+                    C<img src="@/assets/covid.png" alt="covid logo" height="30" />VID-19
                 </router-link>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -25,5 +25,6 @@ export default {
 <style lang="scss" scoped>
 .brand-logo {
     font-size: 1.6em;
+    transform: translateY(7px);
 }
 </style>
