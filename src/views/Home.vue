@@ -113,4 +113,11 @@ export default Vue.extend({
         margin-left: 15px;
         transform: translateY(-2px);
     }
+
+    @media (max-width: 992px) {
+        input.browser-default {
+            display: block;
+            margin: 15px 0 0 0;
+        }
+    }
 </style>

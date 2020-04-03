@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table class="striped">
+        <table class="striped responsive-table">
             <thead>
                 <tr>
                     <th>Country</th>
@@ -51,10 +51,6 @@ export default Vue.extend({
         thead {
             tr {
                 background-color: #5c6bc030;
-            }
-
-            th {
-                font-size: 17px;
             }
         }
 
