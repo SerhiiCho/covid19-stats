@@ -1,31 +1,8 @@
 <template>
-    <div>
+    <div covid-page>
         <h5>World COVID-19 statistics</h5>
 
-        <table class="striped highlight">
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>Confirmed</th>
-                    <th>New cases</th>
-                    <th>Deceased</th>
-                    <th>Recovered</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <div v-if="stats === null">
-                    <h2>nice</h2>
-                </div>
-                <tr v-else v-for="stat in stats" :key="stat.country">
-                    <td>{{ stat.country }}</td>
-                    <td>{{ stat.cases.total }}</td>
-                    <td>{{ stat.cases.new }}</td>
-                    <td>{{ stat.deaths.total }}</td>
-                    <td>{{ stat.cases.recovered }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <CovidTable :stats="stats" />
     </div>
 </template>
 
@@ -34,6 +11,7 @@ import Vue from 'vue'
 import axios, { AxiosResponse } from 'axios'
 import StatsDataItem from '@/interfaces/StatsDataItem'
 import config from '@/config'
+import CovidTable from '@/components/CovidTable.vue'
 
 export default Vue.extend({
     data(): {
@@ -62,6 +40,16 @@ export default Vue.extend({
                 })
                 .catch(err => console.error(err))
         }
-    }
+    },
+
+    components: {
+        CovidTable,
+    },
 })
 </script>
+
+<style lang="scss">
+    [covid-page] {
+        min-height: 1000px;
+    }
+</style>
