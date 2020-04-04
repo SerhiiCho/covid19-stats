@@ -14,15 +14,15 @@
             <tbody>
                 <tr v-for="stat in stats" :key="stat.country">
                     <td>{{ stat.country }}</td>
-                    <td>{{ formatNumber(stat.cases.total) }}</td>
+                    <td>{{ formatNumber(stat.cases) }}</td>
                     <td>
-                        {{ stat.cases.new }}
+                        {{ stat.newCases === 0 ? 0 : `+${formatNumber(stat.newCases)}` }}
                     </td>
                     <td class="red-text text-darken-3">
-                        {{ formatNumber(stat.deaths.total) }}
+                        {{ formatNumber(stat.deaths) }}
                     </td>
                     <td class="green-text text-darken-4">
-                        {{ formatNumber(stat.cases.recovered) }}
+                        {{ formatNumber(stat.recovered) }}
                     </td>
                 </tr>
             </tbody>
@@ -44,6 +44,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     table {
+        position: relative;
+
         td, th {
             padding: 8px 10px;
         }
@@ -54,8 +56,14 @@ export default Vue.extend({
             }
         }
 
-        tbody td {
-            font-weight: bold;
+        tbody {
+            td {
+                font-weight: bold;
+            }
+
+            tr.user-country {
+                background: #fff1a7;
+            }
         }
     }
 </style>
