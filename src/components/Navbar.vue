@@ -8,7 +8,7 @@
 
                 <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <router-link tag="li" to="/">
-                        <a>Home</a>
+                        <a>Dashboard</a>
                     </router-link>
                 </ul> -->
             </div>
