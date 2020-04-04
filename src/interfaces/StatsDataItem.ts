@@ -1,16 +1,8 @@
 export default interface StatsDataItem {
-    cases: {
-        active: number
-        critical: number
-        new: string
-        recovered: number
-        total: number
-    }
+    cases: number
+    recovered: number
+    newCases: number
     country: string
-    day: string
-    deaths: {
-        new: string
-        total: number
-    }
+    deaths: number
     time: string
 }
