@@ -6,10 +6,10 @@
 
         <div v-else>
             <h5>
-                <span>World COVID-19 statistics</span>
+                <span>Search country</span>
 
                 <input type="text"
-                    placeholder="Search country"
+                    placeholder="Country name"
                     class="browser-default"
                     @keyup="filterStats"
                 >
