@@ -52,7 +52,6 @@ export default Vue.extend({
 
     created() {
         this.getStats()
-        setInterval(() => this.getStats(), 10000)
     },
 
     methods: {
