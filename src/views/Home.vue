@@ -5,6 +5,7 @@
         </div>
 
         <div v-else>
+            <TotalCards :data="total" />
             <h5>
                 <span>Search country</span>
 
@@ -29,6 +30,7 @@ import StatsDataItem from '@/interfaces/StatsDataItem'
 import StatsResponseItem from '@/interfaces/StatsResponseItem'
 import config from '@/config'
 import CovidTable from '@/components/CovidTable.vue'
+import TotalCards from '@/components/TotalCards.vue'
 import {StatsDataFieldNames} from '@/types'
 
 export default Vue.extend({
@@ -132,13 +134,14 @@ export default Vue.extend({
 
     components: {
         CovidTable,
+        TotalCards,
     },
 })
 </script>
 
 <style lang="scss">
     [covid-page] {
-        min-height: 400px;
+        min-height: 100vh;
         position: relative;
     }
     input.browser-default {
