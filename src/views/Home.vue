@@ -112,7 +112,7 @@ export default Vue.extend({
 
             this.total = stats.find(i => i.country === 'All' || i.country === 'World') || null
             this.stats = stats.filter(i => i.country !== 'All' && i.country !== 'World')
-            this.initialStats = stats
+            this.initialStats = this.stats
         },
 
         sortBy(field: StatsDataFieldNames, stats: StatsDataItem[]): void {
