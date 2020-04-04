@@ -6,15 +6,17 @@
 
         <div v-else>
             <TotalCards :data="total" />
-            <h5>
-                <span>Search country</span>
+
+            <div>
+                <label search-label for="search-country">Search country</label>
 
                 <input type="text"
                     placeholder="Country name"
                     class="browser-default"
                     @keyup="filterStats"
+                    id="search-country"
                 >
-            </h5>
+            </div>
 
             <div class="section">
                 <CovidTable :stats="stats" />
@@ -145,13 +147,18 @@ export default Vue.extend({
         position: relative;
     }
     input.browser-default {
-        width: 290px;
-        border: 1px solid #9e9e9e;
-        padding: 7px 10px;
+        width: 220px;
+        border: 1px dashed #9e9e9e;
+        padding: 5px 10px;
         border-radius: 3px;
         font-size: 17px;
-        margin-left: 15px;
+        margin-left: 10px;
         transform: translateY(-2px);
+    }
+
+    [search-label] {
+        font-size: 1.2em;
+        color: #444;
     }
 
     @media (max-width: 992px) {

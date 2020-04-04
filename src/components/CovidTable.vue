@@ -2,7 +2,7 @@
     <div>
         <table class="striped responsive-table">
             <thead>
-                <tr>
+                <tr class="blue-grey darken-4">
                     <th>Country</th>
                     <th>Confirmed</th>
                     <th>New cases</th>
@@ -51,14 +51,15 @@ export default Vue.extend({
         }
 
         thead {
-            tr {
-                background-color: #5c6bc030;
+            th {
+                color: white;
             }
         }
 
         tbody {
             td {
                 font-weight: bold;
+                border-bottom: 1px dashed #bdc4c7;
             }
 
             tr.user-country {

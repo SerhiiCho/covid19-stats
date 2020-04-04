@@ -3,7 +3,7 @@
         <div v-if="data === null"></div>
         <div v-else class="row">
             <div class="col m6 s12 l3">
-                <div class="card" style="border-top: 5px solid #a1bdf3">
+                <div class="card" style="border-top-color: #a1bdf3">
                     <div class="card-content">
                         <span class="card-title">Confirmed</span>
                         <p>{{ formatNumber(data.cases) }}</p>
@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="col m6 s12 l3">
-                <div class="card" style="border-top: 5px solid rgb(235, 94, 94)">
+                <div class="card" style="border-top-color: rgb(235, 94, 94)">
                     <div class="card-content">
                         <span class="card-title">Deaths</span>
                         <p>{{ formatNumber(data.deaths) }}</p>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col m6 s12 l3">
-                <div class="card" style="border-top: 5px solid rgb(235, 94, 94)">
+                <div class="card" style="border-top-color: rgb(235, 94, 94)">
                     <div class="card-content">
                         <span class="card-title">New cases</span>
                         <p>{{ data.newCases === 0 ? 0 : `+${formatNumber(data.newCases)}` }}</p>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col m6 s12 l3">
-                <div class="card" style="border-top: 5px solid #00be89">
+                <div class="card" style="border-top-color: #00be89">
                     <div class="card-content">
                         <span class="card-title">Recovered</span>
                         <p>{{ formatNumber(data.recovered) }}</p>
@@ -52,6 +52,11 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
     .card {
+        border: 1px dashed #b3b3b3;
+        box-shadow: none;
+        border-top-width: 4px;
+        border-top-style: solid;
+
         &-title {
             font-size: 1.2em !important;
             margin-bottom: 0 !important;
