@@ -11,14 +11,21 @@
         position: sticky;
         bottom: 0;
         left: 2px;
-        width: 90px;
-        border-radius: 0 10px 0 0;
+        width: 100px;
+        border-radius: 0 4px 0 0;
         padding: 4px 0;
 
         [footer-link] {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+
+    @media(max-width: 601px) {
+        footer {
+            width: 100%;
+            position: static;
         }
     }
 </style>
