@@ -40,22 +40,18 @@ export default Vue.extend({
         stats: StatsDataItem[] | null
         initialStats: StatsDataItem[] | null
         total: StatsDataItem | null
-        userCountry: string
         search: string
     } {
         return {
             stats: null,
             initialStats: null,
             total: null,
-            userCountry: '',
             search: '',
         }
     },
 
-    async created() {
-        await this.getLocation()
-        await this.getStats()
-        console.log(this.userCountry)
+    created() {
+        this.getStats()
     },
 
     methods: {
@@ -126,12 +122,6 @@ export default Vue.extend({
                 return a[field] > b[field] ? -1 : 0
             })
         },
-
-        async getLocation() {
-            await axios.get('http://ip-api.com/json')
-                .then(res => this.userCountry = res.data.country)
-                .catch(err => console.error(err))
-        }        
     },
 
     components: {
