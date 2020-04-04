@@ -87,9 +87,9 @@ export default Vue.extend({
                 return a.cases.total > b.cases.total ? -1 : 0
             })
 
-            this.total = resp.splice(0, 1)[0]
-            this.stats = resp
-            this.initialStats = resp
+            this.total = resp.find(i => i.country === 'All' || i.country === 'World') || null
+            this.stats = resp.filter(i => i.country !== 'All' && i.country !== 'World')
+            this.initialStats = this.stats
         },
     },
 
