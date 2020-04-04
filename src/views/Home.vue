@@ -26,26 +26,32 @@
 import Vue from 'vue'
 import axios, { AxiosResponse } from 'axios'
 import StatsDataItem from '@/interfaces/StatsDataItem'
+import StatsResponseItem from '@/interfaces/StatsResponseItem'
 import config from '@/config'
 import CovidTable from '@/components/CovidTable.vue'
+import {StatsDataFieldNames} from '@/types'
 
 export default Vue.extend({
     data(): {
         stats: StatsDataItem[] | null
         initialStats: StatsDataItem[] | null
         total: StatsDataItem | null
+        userCountry: string
         search: string
     } {
         return {
             stats: null,
             initialStats: null,
             total: null,
+            userCountry: '',
             search: '',
         }
     },
 
-    created() {
-        this.getStats()
+    async created() {
+        await this.getLocation()
+        await this.getStats()
+        console.log(this.userCountry)
     },
 
     methods: {
@@ -72,25 +78,56 @@ export default Vue.extend({
                 "x-rapidapi-key": config.requestKey,
             }
 
-           axios
-                .get(config.requestURL, {headers})
-                .then((res: AxiosResponse<{response: StatsDataItem[]}>) => {
+            axios.get(config.requestURL, {headers})
+                .then((res: AxiosResponse<{response: StatsResponseItem[]}>) => {
                     this.handleResponse(res.data.response)
                 })
                 .catch(err => console.error(err))
         },
 
-        handleResponse(resp: StatsDataItem[]): any {
-            resp.sort((a: StatsDataItem, b: StatsDataItem) => {
-                if (a.cases.total < b.cases.total)
-                    return 1
-                return a.cases.total > b.cases.total ? -1 : 0
-            })
+        remapResponseToStatsItem(stats: StatsResponseItem[]): StatsDataItem[] {
+            return stats.map((item): StatsDataItem => {
+                let newCases = 0
 
-            this.total = resp.find(i => i.country === 'All' || i.country === 'World') || null
-            this.stats = resp.filter(i => i.country !== 'All' && i.country !== 'World')
-            this.initialStats = this.stats
+                if (item.cases.new !== null) {
+                    let len = item.cases.new.length
+                    newCases = parseInt(item.cases.new.substring(1, len))
+                }
+
+                return {
+                    cases: item.cases.total,
+                    recovered: item.cases.recovered,
+                    newCases: newCases,
+                    country: item.country,
+                    deaths: item.deaths.total,
+                    time: item.time,
+                }
+            })
         },
+
+        handleResponse(resp: StatsResponseItem[]): any {
+            let stats = this.remapResponseToStatsItem(resp)
+
+            this.sortBy('cases', stats)
+
+            this.total = stats.find(i => i.country === 'All' || i.country === 'World') || null
+            this.stats = stats.filter(i => i.country !== 'All' && i.country !== 'World')
+            this.initialStats = stats
+        },
+
+        sortBy(field: StatsDataFieldNames, stats: StatsDataItem[]): void {
+            stats.sort((a: StatsDataItem, b: StatsDataItem) => {
+                if (a[field] < b[field])
+                    return 1
+                return a[field] > b[field] ? -1 : 0
+            })
+        },
+
+        async getLocation() {
+            await axios.get('http://ip-api.com/json')
+                .then(res => this.userCountry = res.data.country)
+                .catch(err => console.error(err))
+        }        
     },
 
     components: {
