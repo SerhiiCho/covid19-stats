@@ -2,9 +2,11 @@
     <div>
         <nav class="blue-grey darken-4">
             <div class="container">
-                <a href="javascript:" class="sidenav-trigger" @click="toggleSidenav">
-                    OO
-                </a>
+                <div class="hide-on-large-only">
+                    <a href="javascript:" class="sidenav-trigger" @click="toggleSidenav">
+                        <img src="@/assets/bars.png" alt="menu" width="25">
+                    </a>
+                </div>
 
                 <div class="nav-wrapper">
                     <router-link class="brand-logo" to="/">
@@ -74,5 +76,11 @@ export default Vue.extend({
 
     .sidenav .background img {
         width: 100%;
+    }
+
+    .sidenav-trigger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
