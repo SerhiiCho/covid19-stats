@@ -1,15 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import WhatToDo from '../views/WhatToDo.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home
-    }
+        component: Home,
+    },
+    {
+        path: '/what-to-do',
+        component: WhatToDo,
+    },
 ]
 
 const router = new VueRouter({
