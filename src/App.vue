@@ -4,7 +4,7 @@
 
         <div class="container">
             <transition name="animate" mode="out-in">
-                <router-view :key="$route.fullPath"></router-view>
+                <router-view></router-view>
             </transition>
         </div>
 
