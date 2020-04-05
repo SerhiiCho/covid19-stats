@@ -1,19 +1,122 @@
 <template>
     <div what-to-do-page>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, harum fugit, alias assumenda quisquam qui sunt nulla cupiditate obcaecati corporis id labore rerum ipsum provident. Suscipit magnam, dolorem ipsum doloribus dignissimos accusantium, numquam explicabo fugiat exercitationem consectetur optio nulla aspernatur saepe nemo quam! Similique aut nobis reprehenderit cum pariatur deserunt ducimus illo atque, nihil sequi temporibus a non ex optio fuga minima laborum odio, possimus accusamus repudiandae voluptatem asperiores molestias! Tempore temporibus iusto reiciendis sint facere beatae omnis dolor et voluptatum eius cupiditate quod ea, ad, libero at consectetur nulla nobis vel sapiente voluptatem deleniti. Saepe dolores nesciunt rerum necessitatibus soluta aliquam labore dignissimos magni corporis commodi laborum fuga odit voluptas voluptatem similique illo, ex accusantium rem asperiores possimus. Ex tenetur hic excepturi perspiciatis laudantium temporibus, reiciendis nemo ipsa cum iste atque dolore eius unde, sapiente voluptatum. Maiores similique fuga quas quo dolore quia repellendus, ullam alias consequuntur libero repellat ea repudiandae quos iusto, culpa nemo? Dolorum eum deserunt totam excepturi perferendis provident saepe nostrum magni in porro dolores consectetur quasi similique a laudantium error nulla beatae nisi voluptatum atque, vero placeat tenetur distinctio sint! Optio eum consequuntur natus nesciunt consequatur nam, tempora odio ex magnam veritatis! Eos sunt voluptatum, eveniet odio vel aut rerum minus tempora similique possimus earum nobis sed aliquam, delectus ex corrupti explicabo quam nam repellat! Placeat aperiam odio deserunt blanditiis, saepe aspernatur dolorem doloremque animi iste sapiente ea dignissimos beatae rem incidunt modi iure dolore cupiditate, officia alias nulla! Temporibus velit labore nobis veritatis enim quos nesciunt, nemo harum voluptatum pariatur amet optio fuga magnam dolores doloribus est sit eaque, minima, reiciendis explicabo. Aspernatur minus reprehenderit pariatur earum dolore eum, commodi necessitatibus aliquid ipsa? Placeat reiciendis quasi doloremque sed in impedit tempore eos, aspernatur dignissimos necessitatibus officia fugiat provident vitae distinctio numquam totam error non?
+        <div class="row">
+            <div class="col l8">
+                <section>
+                    <h2>How do I protect myself?</h2>
+                    <p>
+                        The best thing is
+                        <a
+                            href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+                            target="_blank"
+                        >regular and thorough hand washing,</a> preferably with soap and water.
+                    </p>
+                    <p>Coronavirus spreads when an infected person coughs small droplets - packed with the virus - into the air. These can be breathed in, or cause an infection if you touch a surface they have landed on, then your eyes, nose or mouth.</p>
+                    <p>So, coughing and sneezing into tissues, not touching your face with unwashed hands, and avoiding close contact with infected people are important for limiting the spread.</p>
+                    <p>
+                        <a
+                            href="https://www.bbc.co.uk/news/health-51205344"
+                            target="_blank"
+                        >Face masks do not provide effective protection,</a> according to medical experts.
+                    </p>
+                    <p>
+                        However, the World Health Organization (WHO) is currently looking at
+                        <a
+                            href="https://www.bbc.co.uk/news/science-environment-52126735"
+                            target="_blank"
+                        >whether the public might benefit from using face masks.</a>
+                    </p>
+                    <p>This follows a study suggesting that the virus can travel further in coughs and sneezes than previously thought.</p>
+
+                    <section>
+                        <img src="@/assets/img/what-to-do.png" alt="what to do" />
+                    </section>
+                </section>
+
+                <section class="section">
+                    <h2>What are the coronavirus symptoms?</h2>
+                    <p>Coronavirus infects the lungs. The two main, key symptoms are a fever and a dry cough, which can in some cases lead to breathing problems.</p>
+                    <p>The cough to look out for is a new, continuous cough. This means coughing a lot for more than an hour, or having three or more coughing episodes in 24 hours (and if you usually have a cough, it may be worse than usual).</p>
+                    <p>You have a fever if your temperature is above 37.8C. This can make you feel warm, cold or shivery.</p>
+                    <p>
+                        It takes
+                        <a
+                            href="https://www.bbc.co.uk/news/health-51800707"
+                            target="_blank"
+                        >five days on average to start showing the symptoms,</a> scientists have said, but some people will get symptoms much later than this. In fact the World Health Organization (WHO) says the incubation period lasts up to 14 days.
+                    </p>
+                    <p>
+                        A sore throat, headache and diarrhoea have also been reported in some cases and
+                        <a
+                            href="https://www.bbc.co.uk/news/health-52111606"
+                            target="_blank"
+                        >a loss of smell and taste may also be a symptom.</a> But these symptoms aren't specific to this coronavirus.
+                    </p>
+                    <p>
+                        <a
+                            href="https://www.bbc.co.uk/news/health-52006988"
+                            target="_blank"
+                        >There is a lot we still don't know about the full range of symptoms</a>.
+                    </p>
+
+                    <section class="section">
+                        <img src="@/assets/img/symptoms.png" alt="symptoms" />
+                    </section>
+                </section>
+
+                <section>
+                    <span>
+                        Original source:
+                        <a
+                            href="https://www.bbc.com/news/health-51048366"
+                            target="_blank"
+                        >https://www.bbc.com/news/health-51048366</a>
+                    </span>
+                </section>
+            </div>
+            <div class="col l4">
+                <section>
+                    <img src="@/assets/img/prevent.png" alt="prevent virus" />
+                </section>
+            </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue"
 
-export default Vue.extend({
-    
-})
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped>
-    [what-to-do-page] {
-        min-height: 100vh;
+section {
+    margin: 25px 0;
+}
+
+[what-to-do-page] {
+    min-height: 100vh;
+
+    section {
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            margin: 10px 0 15px 0;
+            font-size: 2.3em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 17px 0px;
+        }
+
+        a {
+            font-weight: bold;
+            color: #333;
+            text-decoration: underline;
+        }
     }
+}
 </style>

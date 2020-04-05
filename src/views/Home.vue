@@ -1,5 +1,5 @@
 <template>
-    <div home-page>
+    <div home-page class="section">
         <div v-if="stats === null">
             <div class="spinner"></div>
         </div>

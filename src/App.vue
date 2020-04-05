@@ -2,7 +2,7 @@
     <div id="app">
         <Navbar />
 
-        <div class="container section">
+        <div class="container">
             <transition name="animate" mode="out-in">
                 <router-view></router-view>
             </transition>
