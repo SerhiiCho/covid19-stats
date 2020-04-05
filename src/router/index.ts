@@ -14,6 +14,10 @@ const routes = [
         path: '/what-to-do',
         component: WhatToDo,
     },
+    {
+        path: '*',
+        component: Home,
+    },
 ]
 
 const router = new VueRouter({
