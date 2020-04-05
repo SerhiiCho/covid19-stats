@@ -8,6 +8,9 @@ import formatNumber from '@/modules/formatNumber'
 Vue.config.productionTip = false
 Vue.prototype.formatNumber = formatNumber
 
+// @ts-ignore
+window.Event = new Vue()
+
 new Vue({
   router,
   render: h => h(App)

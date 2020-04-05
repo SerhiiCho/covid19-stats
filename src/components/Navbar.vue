@@ -53,6 +53,11 @@ export default Vue.extend({
         }
     },
 
+    created() {
+        // @ts-ignore
+        Event.$on('new-view', () => this.showSidebar = false)
+    },
+
     methods: {
         toggleSidenav(): void {
             this.showSidebar = !this.showSidebar

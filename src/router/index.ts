@@ -23,4 +23,7 @@ const router = new VueRouter({
     routes
 })
 
+// @ts-ignore
+router.afterEach((to, from) => Event.$emit('new-view'))
+
 export default router
