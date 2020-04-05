@@ -3,7 +3,7 @@
         <Navbar />
 
         <div class="container section">
-            <transition name="fade-in-left">
+            <transition name="animate" mode="out-in">
                 <router-view></router-view>
             </transition>
         </div>

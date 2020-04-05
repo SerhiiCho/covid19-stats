@@ -1,5 +1,5 @@
 <template>
-    <div covid-page>
+    <div home-page>
         <div v-if="stats === null">
             <div class="spinner"></div>
         </div>
@@ -132,10 +132,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-    [covid-page] {
+    [home-page] {
         min-height: 100vh;
         position: relative;
     }
+
     input.browser-default {
         width: 220px;
         border: 1px dashed #9e9e9e;

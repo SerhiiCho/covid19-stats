@@ -3,14 +3,33 @@ body {
 }
 
 ::placeholder {
-  color: #999999 !important;
-  opacity: 1 !important; /* Firefox */
+    color: #999999 !important;
+    opacity: 1 !important; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: #999999 !important;
+    color: #999999 !important;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
- color: #999999 !important;
+    color: #999999 !important;
+}
+
+.animate {
+    &-enter-active,
+    &-leave-active {
+        transition: transform 100ms, opacity 100ms;
+    }
+    &-enter {
+        transform: translateX(-100%);
+    }
+    &-enter-to,
+    &-leave {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    &-leave-to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
