@@ -33,3 +33,13 @@ body {
         opacity: 0;
     }
 }
+
+.sidenav-overlay {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.sidenav {
+    width: 230px;
+    transform: translateX(0) !important;
+}
