@@ -18,7 +18,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-    nav ul li.active {
-        background-color: rgba(0,0,0,0.4);
+    .nav-wrapper {
+        ul {
+            li {
+                line-height: 43px;
+
+                &.active {
+                    background-color: rgba(0,0,0,0.4);
+                }
+            }
+        }
     }
 </style>

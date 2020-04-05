@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="hide-on-large-only">
                     <a href="javascript:" class="sidenav-trigger" @click="toggleSidenav">
-                        <img src="@/assets/bars.png" alt="menu" width="25">
+                        <img src="@/assets/bars.png" alt="menu" width="20">
                     </a>
                 </div>
 
@@ -71,8 +71,16 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+    $nav-height: 43px;
+
+    nav,
+    .sidenav-trigger {
+        height: $nav-height;
+    }
+
     .brand-logo {
-        font-size: 1.6em;
+        font-size: 1.3em;
+        line-height: $nav-height;
 
         img {
             transform: translateY(7px);
