@@ -8,6 +8,7 @@
                     <th>New cases</th>
                     <th>Deceased</th>
                     <th>Recovered</th>
+                    <th>Last update</th>
                 </tr>
             </thead>
 
@@ -23,6 +24,9 @@
                     </td>
                     <td class="green-text text-darken-4">
                         {{ formatNumber(stat.recovered) }}
+                    </td>
+                    <td>
+                        {{ stat.time }}
                     </td>
                 </tr>
             </tbody>

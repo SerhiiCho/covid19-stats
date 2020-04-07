@@ -34,6 +34,8 @@ import config from '@/config'
 import CovidTable from '@/components/CovidTable.vue'
 import TotalCards from '@/components/TotalCards.vue'
 import {StatsDataFieldNames} from '@/types'
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
 
 export default Vue.extend({
     data(): {
@@ -41,17 +43,21 @@ export default Vue.extend({
         initialStats: StatsDataItem[] | null
         total: StatsDataItem | null
         search: string
+        timeAgo: any
     } {
         return {
             stats: null,
             initialStats: null,
             total: null,
             search: '',
+            timeAgo: null,
         }
     },
 
     created() {
         this.getStats()
+        TimeAgo.addLocale(en)
+        this.timeAgo = new TimeAgo('en-US')
     },
 
     methods: {
@@ -100,7 +106,7 @@ export default Vue.extend({
                     newCases: newCases,
                     country: item.country,
                     deaths: item.deaths.total,
-                    time: item.time,
+                    time: this.timeAgo.format(Date.parse(item.time)),
                 }
             })
         },
