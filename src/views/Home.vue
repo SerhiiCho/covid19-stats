@@ -117,7 +117,11 @@ export default Vue.extend({
             this.sortBy('cases', stats)
 
             this.total = stats.find(i => i.country === 'All' || i.country === 'World') || null
-            this.stats = stats.filter(i => i.country !== 'All' && i.country !== 'World')
+            this.stats = stats.filter(i => {
+                return i.country !== 'All'
+                    && i.country !== 'World'
+                    && /^(?:(?!-).)*$/.test(i.country)
+            })
             this.initialStats = this.stats
         },
 
