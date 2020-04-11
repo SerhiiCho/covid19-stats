@@ -44,6 +44,7 @@ export default Vue.extend({
         total: StatsDataItem | null
         search: string
         timeAgo: any
+        continents: string[]
     } {
         return {
             stats: null,
@@ -51,6 +52,15 @@ export default Vue.extend({
             total: null,
             search: '',
             timeAgo: null,
+            continents:  [
+                'North-America',
+                'South-America',
+                'Europe',
+                'Asia',
+                'Africa',
+                'Oceania',
+                'Australia',
+            ],
         }
     },
 
@@ -116,12 +126,12 @@ export default Vue.extend({
 
             this.sortBy('cases', stats)
 
-            this.total = stats.find(i => i.country === 'All' || i.country === 'World') || null
+            this.total = stats.find(i => i.country === 'All') || null
+
             this.stats = stats.filter(i => {
-                return i.country !== 'All'
-                    && i.country !== 'World'
-                    && /^(?:(?!-).)*$/.test(i.country)
+                return i.country !== 'All' && !this.continents.includes(i.country)
             })
+
             this.initialStats = this.stats
         },
 
