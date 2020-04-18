@@ -44,10 +44,12 @@
 import Vue from 'vue'
 import NavLinks from '@/components/NavLinks.vue'
 
+interface ComponentData {
+    showSidebar: boolean
+}
+
 export default Vue.extend({
-    data(): {
-        showSidebar: boolean
-    } {
+    data(): ComponentData {
         return {
             showSidebar: false,
         }

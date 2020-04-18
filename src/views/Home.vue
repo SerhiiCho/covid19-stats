@@ -37,15 +37,17 @@ import {StatsDataFieldNames} from '@/types'
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 
+interface ComponentData {
+    stats: StatsDataItem[] | null
+    initialStats: StatsDataItem[] | null
+    total: StatsDataItem | null
+    search: string
+    timeAgo: any
+    continents: string[]
+}
+
 export default Vue.extend({
-    data(): {
-        stats: StatsDataItem[] | null
-        initialStats: StatsDataItem[] | null
-        total: StatsDataItem | null
-        search: string
-        timeAgo: any
-        continents: string[]
-    } {
+    data(): ComponentData {
         return {
             stats: null,
             initialStats: null,
