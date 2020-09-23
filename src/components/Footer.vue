@@ -1,6 +1,6 @@
 <template>
     <footer class="indigo lighten-5">
-        <a href="https://serhii.tk" footer-link target="_blank">
+        <a href="https://serhii.io" footer-link target="_blank">
             <img src="@/assets/logo.png" alt="serhii cho logo" height="35">
         </a>
     </footer>
