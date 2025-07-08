@@ -1,31 +1,21 @@
+<script setup lang="ts">
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
+</script>
+
 <template>
-    <div id="app">
+    <div>
         <Navbar />
 
         <div class="container">
-            <transition name="animate" mode="out-in">
-                <router-view></router-view>
-            </transition>
+            <RouterView />
         </div>
 
         <Footer />
     </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-import Navbar from "@/components/Navbar.vue";
-import Footer from "@/components/Footer.vue";
-
-export default Vue.extend({
-    components: {
-        Navbar,
-        Footer,
-    },
-});
-</script>
-
 <style lang="scss">
-@import "@/assets/scss/_common";
-@import "@/assets/scss/_spinner";
+@use '@/assets/scss/_common';
+@use '@/assets/scss/_spinner';
 </style>

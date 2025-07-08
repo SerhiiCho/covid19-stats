@@ -9,22 +9,16 @@
     </ul>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({})
-</script>
-
 <style lang="scss" scoped>
-    .nav-wrapper {
-        ul {
-            li {
-                line-height: 43px;
+.nav-wrapper {
+    ul {
+        li {
+            line-height: 43px;
 
-                &.active {
-                    background-color: rgba(0,0,0,0.4);
-                }
+            &.active {
+                background-color: rgba(0, 0, 0, 0.4);
             }
         }
     }
+}
 </style>

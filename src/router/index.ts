@@ -1,9 +1,6 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import WhatToDo from '../views/WhatToDo.vue'
-
-Vue.use(VueRouter)
 
 const routes = [
     {
@@ -15,18 +12,17 @@ const routes = [
         component: WhatToDo,
     },
     {
-        path: '*',
+        path: '/:catchAll(.*)',
         component: Home,
     },
 ]
 
-const router = new VueRouter({
-    mode: 'history',
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
     linkActiveClass: 'active',
-    routes
 })
 
-// @ts-ignore
-router.afterEach((to, from) => Event.$emit('new-view'))
+// router.afterEach((to, from) => Event.$emit('new-view'))
 
 export default router

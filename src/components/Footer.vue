@@ -1,36 +1,31 @@
 <template>
     <footer class="indigo lighten-5">
         <a href="https://serhii.io" footer-link target="_blank">
-            <img src="@/assets/logo.png" alt="serhii cho logo" height="35">
+            <img src="@/assets/logo.png" alt="serhii cho logo" height="35" />
         </a>
     </footer>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({})
-</script>
-
 <style lang="scss" scoped>
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 2px;
+    width: 100px;
+    border-radius: 0 4px 0 0;
+    padding: 4px 0;
+
+    [footer-link] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 601px) {
     footer {
-        position: sticky;
-        bottom: 0;
-        left: 2px;
-        width: 100px;
-        border-radius: 0 4px 0 0;
-        padding: 4px 0;
-
-        [footer-link] {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        width: 100%;
+        position: static;
     }
-
-    @media(max-width: 601px) {
-        footer {
-            width: 100%;
-            position: static;
-        }
-    }
+}
 </style>

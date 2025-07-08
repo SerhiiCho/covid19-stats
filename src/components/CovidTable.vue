@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+import StatsDataItem from '@/interfaces/StatsDataItem'
+import formatNumber from '@/modules/formatNumber'
+
+type Props = {
+    stats: StatsDataItem[]
+}
+
+defineProps<Props>()
+</script>
+
 <template>
     <div>
         <table class="striped responsive-table">
@@ -17,7 +28,11 @@
                     <td>{{ stat.country }}</td>
                     <td>{{ formatNumber(stat.cases) }}</td>
                     <td>
-                        {{ stat.newCases === 0 ? 0 : `+${formatNumber(stat.newCases)}` }}
+                        {{
+                            stat.newCases === 0
+                                ? 0
+                                : `+${formatNumber(stat.newCases)}`
+                        }}
                     </td>
                     <td class="red-text text-darken-3">
                         {{ formatNumber(stat.deaths) }}
@@ -34,41 +49,30 @@
     </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-    props: {
-        stats: {
-            default: null,
-        }
-    },
-})
-</script>
-
 <style lang="scss" scoped>
-    table {
-        position: relative;
+table {
+    position: relative;
 
-        td, th {
-            padding: 8px 10px;
-        }
+    td,
+    th {
+        padding: 8px 10px;
+    }
 
-        thead {
-            th {
-                color: white;
-            }
-        }
-
-        tbody {
-            td {
-                font-weight: bold;
-                border-bottom: 1px dashed #bdc4c7;
-            }
-
-            tr.user-country {
-                background: #fff1a7;
-            }
+    thead {
+        th {
+            color: white;
         }
     }
+
+    tbody {
+        td {
+            font-weight: bold;
+            border-bottom: 1px dashed #bdc4c7;
+        }
+
+        tr.user-country {
+            background: #fff1a7;
+        }
+    }
+}
 </style>

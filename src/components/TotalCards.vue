@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+import StatsDataItem from '@/interfaces/StatsDataItem'
+import formatNumber from '@/modules/formatNumber'
+
+type Props = {
+    data: StatsDataItem | null
+}
+
+defineProps<Props>()
+</script>
+
 <template>
     <div>
         <div v-if="data === null"></div>
@@ -22,7 +33,13 @@
                 <div class="card" style="border-top-color: rgb(235, 94, 94)">
                     <div class="card-content">
                         <span class="card-title">New cases</span>
-                        <p>{{ data.newCases === 0 ? 0 : `+${formatNumber(data.newCases)}` }}</p>
+                        <p>
+                            {{
+                                data.newCases === 0
+                                    ? 0
+                                    : `+${formatNumber(data.newCases)}`
+                            }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -38,41 +55,29 @@
     </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-   props: {
-       data: {
-           default: null,
-       }
-   }
-})
-</script>
-
 <style lang="scss" scoped>
-    .card {
-        border: 1px dashed #b3b3b3;
-        box-shadow: none;
-        border-top-width: 4px;
-        border-top-style: solid;
+.card {
+    border: 1px dashed #b3b3b3;
+    box-shadow: none;
+    border-top-width: 4px;
+    border-top-style: solid;
 
-        &-title {
-            font-size: 1.2em !important;
-            margin-bottom: 0 !important;
-            line-height: 1.5 !important;
-        }
+    &-title {
+        font-size: 1.2em !important;
+        margin-bottom: 0 !important;
+        line-height: 1.5 !important;
+    }
 
-        &-content {
-            padding: 15px 20px !important;
-            text-align: center;
+    &-content {
+        padding: 15px 20px !important;
+        text-align: center;
 
-            p {
-                font-weight: bold;
-                font-size: 1.6em;
-                color: #444;
-                line-height: 1;
-            }
+        p {
+            font-weight: bold;
+            font-size: 1.6em;
+            color: #444;
+            line-height: 1;
         }
     }
+}
 </style>
