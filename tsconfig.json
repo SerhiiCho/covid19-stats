@@ -1,20 +1,28 @@
 {
     "compilerOptions": {
-        "target": "ES2018",
-        "module": "es2022",
-        "moduleResolution": "Node",
-        "lib": ["es2021", "dom", "WebWorker"],
-        "sourceMap": true,
-        "removeComments": true,
-        "noEmitOnError": true,
+        "baseUrl": "./src",
+        "target": "ES2020",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "preserve",
         "strict": true,
-        "noImplicitAny": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
         "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        },
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true
-    }
+            "@/*": ["./*"]
+        }
+    },
+    "include": ["src/**/*.ts", "src/**/*.vue"],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
 }
