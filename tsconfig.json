@@ -1,40 +1,20 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "types": [
-      "webpack-env"
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "compilerOptions": {
+        "target": "ES2018",
+        "module": "es2022",
+        "moduleResolution": "Node",
+        "lib": ["es2021", "dom", "WebWorker"],
+        "sourceMap": true,
+        "removeComments": true,
+        "noEmitOnError": true,
+        "strict": true,
+        "noImplicitAny": false,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true
+    }
 }

@@ -1,17 +1,14 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import 'materialize-css/dist/css/materialize.min.css'
 import 'materialize-css/dist/js/materialize.min.js'
 import formatNumber from '@/modules/formatNumber'
 
-Vue.config.productionTip = false
-Vue.prototype.formatNumber = formatNumber
+const app = createApp(App)
 
-// @ts-ignore
-window.Event = new Vue()
+app.config.globalProperties.formatNumber = formatNumber
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+app.use(router)
+
+app.mount('#app')
