@@ -6,10 +6,12 @@ const routes = [
     {
         path: '/',
         component: Home,
+        name: 'home',
     },
     {
         path: '/what-to-do',
         component: WhatToDo,
+        name: 'what-to-do',
     },
     {
         path: '/:catchAll(.*)',
@@ -22,7 +24,5 @@ const router = createRouter({
     routes,
     linkActiveClass: 'active',
 })
-
-// router.afterEach((to, from) => Event.$emit('new-view'))
 
 export default router

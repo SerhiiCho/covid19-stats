@@ -1,13 +1,8 @@
 <script lang="ts" setup>
 import NavLinks from '@/components/NavLinks.vue'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const showSidebar = ref<boolean>(false)
-
-onMounted(() => {
-    // todo: not working
-    // Event.$on('new-view', () => (this.showSidebar = false))
-})
 
 function toggleSidenav(): void {
     showSidebar.value = !showSidebar.value

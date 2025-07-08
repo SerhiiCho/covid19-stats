@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
     <div what-to-do-page>
         <div class="row">

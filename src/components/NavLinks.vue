@@ -1,11 +1,27 @@
 <template>
     <ul>
-        <router-link tag="li" to="/" exact>
-            <a>Dashboard</a>
-        </router-link>
-        <router-link tag="li" to="/what-to-do" exact>
-            <a>What to do?</a>
-        </router-link>
+        <RouterLink :to="{ name: 'home' }" v-slot="{ isActive, navigate }" custom>
+            <li
+                :class="{ active: isActive }"
+                @click="navigate"
+                style="cursor: pointer"
+            >
+                <a>Dashboard</a>
+            </li>
+        </RouterLink>
+        <RouterLink
+            :to="{ name: 'what-to-do' }"
+            v-slot="{ isActive, navigate }"
+            custom
+        >
+            <li
+                :class="{ active: isActive }"
+                @click="navigate"
+                style="cursor: pointer"
+            >
+                <a>What to do?</a>
+            </li>
+        </RouterLink>
     </ul>
 </template>
 
