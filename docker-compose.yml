@@ -1,0 +1,13 @@
+name: covid19
+
+services:
+    app:
+        image: covid19
+        container_name: covid19
+        build:
+            context: .
+        ports:
+            - 3000:5173
+        volumes:
+            - .:/app
+            - /app/node_modules
