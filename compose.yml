@@ -11,4 +11,3 @@ services:
             - 3000:5173
         volumes:
             - .:/app:z
-            - /app/node_modules
