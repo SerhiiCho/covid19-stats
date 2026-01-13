@@ -2,14 +2,17 @@
 
 ## Contribute
 ### Container Engine
-> [!NOTE]
-> If you use [🐳 Docker](https://app.docker.com/) instead of [🦦 Podman](https://podman.io/), just replace `podman-compose` with `docker compose`, and `podman` with `docker` in code examples below.
-
 #### Build an Image
-To build an image, navigate to the root of the project and run this command:
+To build an image, navigate to the root of the project and run this command.
 
+With Podman:
 ```bash
 podman-compose build
+```
+
+With Docker:
+```bash
+docker compose build
 ```
 
 #### Create `node_modules`
