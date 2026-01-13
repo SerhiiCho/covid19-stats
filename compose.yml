@@ -4,9 +4,7 @@ services:
     app:
         image: covid19
         container_name: covid19
-        build:
-            context: .
-            dockerfile: Containerfile
+        build: .
         ports:
             - 3000:5173
         volumes:
